@@ -1,0 +1,104 @@
+﻿table.scale th
+{
+    background: #888777;
+    color: #fff;
+    text-align:center;
+}
+.proLev, .conLev
+{
+     padding: 3px;
+     color: #fff;
+     overflow: hidden;
+     display: inline-block;
+}
+.proLev
+{
+    background:  #02B401;
+}
+.conLev
+{
+    background:  #B42F19;
+    direction: rtl;
+}
+
+/* Scoreboard */
+.board
+{
+    background: #466E4A;
+    width: 400px; 
+    height: 100%;
+    margin-bottom: 16px;
+    /*shrinker*/
+    font: 0.5em/1 "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+}
+.board th
+{ 
+    width: 100%;
+    border-spacing: 0;
+    padding: 0;
+    text-align:center; 
+    overflow:hidden;
+    vertical-align:top;
+}
+.board th.num
+{
+   width: 44px;
+}
+.board .col
+{
+    vertical-align: top;
+    border: solid 2px #FFF;
+}
+
+.board div.score
+{
+    font: 240%/1 Impact;
+    margin:2px;
+    padding: 2px 3px;
+    text-align: right;
+    color: #FFA21E;
+    background: #232623;
+}
+.board .le
+{
+    position:relative; /*necessary for vertical centering in IE */
+    float:left;
+}
+/*IE only have to vertically center*/
+.board .ieShell
+{
+    #left:6px;
+    #position: absolute; 
+    #top: 50%;
+    #left: 50%;
+}
+.board .ieCenter
+{
+    width:100%;
+    #position: relative; 
+    #top: -50%; 
+    #left: -50%;
+}
+.status
+{
+    background: #232623;
+    border: dotted 2px #FFB017;
+   text-align:center;
+   margin: 2px;
+   padding: 3px 6px;
+   font-size: 2.5em;
+   font-weight: bold;
+   letter-spacing: -2px;
+   color: #eee;
+   font-family:Lucida Console, Monaco5, monospace;
+}
+
+.prev
+{
+    background: #FFEDBE; 
+    border: solid 1px #C0B38F;
+    padding: 0 24px;
+    overflow:hidden; 
+    width:850px; 
+    margin-top: 10px;
+}

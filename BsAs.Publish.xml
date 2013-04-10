@@ -1,0 +1,24 @@
+<publishData>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\Scoreboard\">
+    <file relUrl="bin/System.Web.Extensions.dll" publishTime="1/20/2007 5:56:32 PM" />
+    <file relUrl="bin/BsAs.pdb" publishTime="7/8/2007 7:54:07 PM" />
+    <file relUrl="bin/System.Web.Extensions.Design.dll" publishTime="1/20/2007 5:56:34 PM" />
+    <file relUrl="bin/BsAs.dll" publishTime="7/8/2007 7:54:07 PM" />
+    <file relUrl="bin/Visual Studio 2005/Visualizers/autoexpce.dll" publishTime="9/23/2005 3:37:56 AM" />
+    <file relUrl="Images/SavedStar.png" publishTime="2/1/2007 2:41:06 PM" />
+    <file relUrl="bin/AjaxControlToolkit.dll.refresh" publishTime="7/4/2007 1:48:59 AM" />
+    <file relUrl="bin/Visual Studio 2005/Visualizers/autoexp.cs" publishTime="9/23/2005 2:20:46 AM" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="3/3/2007 4:19:18 PM" />
+    <file relUrl="bin/Microsoft.Web.Preview.dll" publishTime="1/20/2007 5:56:40 PM" />
+    <file relUrl="bin/Visual Studio 2005/Visualizers/attribcache80.bin" publishTime="7/7/2007 5:19:35 PM" />
+    <file relUrl="Images/EmptyStar.png" publishTime="2/1/2007 2:41:04 PM" />
+    <file relUrl="bin/Visual Studio 2005/Visualizers/autoexpce.cs" publishTime="9/23/2005 2:20:48 AM" />
+    <file relUrl="Images/FilledStar.png" publishTime="2/1/2007 2:41:06 PM" />
+    <file relUrl="bin/Visual Studio 2005/Visualizers/autoexp.dll" publishTime="9/23/2005 3:37:56 AM" />
+    <file relUrl="Web.config" publishTime="6/22/2007 8:55:02 PM" />
+    <file relUrl="Scores.xml" publishTime="7/7/2007 10:36:18 PM" />
+    <file relUrl="Default.aspx" publishTime="7/8/2007 6:03:39 PM" />
+    <file relUrl="bin/AjaxControlToolkit.pdb" publishTime="3/3/2007 4:19:18 PM" />
+    <file relUrl="styles.css" publishTime="7/8/2007 7:52:19 PM" />
+  </publishTarget>
+</publishData>

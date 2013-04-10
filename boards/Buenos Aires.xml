@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<ScoreBored UserId="3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26" Created="0001-01-01T00:00:00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>Buenos Aires</Name>
+	<Description>Living In Buenos Aires</Description>
+	<ProPhrase>an oasis</ProPhrase>
+	<ConPhrase>hell on earth</ConPhrase>
+	<Pros>
+		<Rating>
+			<Text>Empanadas Again!!</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-05T08:04:52.91225Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:06:52.5029068Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdfih s df lhfsd lh fsd l hfds l h dflh  fh lg  lhgf  lhgs lh gf s lhgflh sg sre;i orse ;ih</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:06:57.003454Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:06:59.503758Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:00.9570597Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:02.5666304Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:03.9261707Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:05.2700841Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:09.2549436Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:11.4583365Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdf gsdfg</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T01:07:47.1970568Z</Created>
+		</Rating>
+	</Pros>
+	<Cons>
+		<Rating>
+			<Text>sdgg dsgftry</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T02:18:10.7642497Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdgg dsgftry</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T02:20:08.2382877Z</Created>
+		</Rating>
+		<Rating>
+			<Text>sdgg dsgftry</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T02:20:42.9429674Z</Created>
+		</Rating>
+		<Rating>
+			<Text>eat a dungess</Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>4</Score>
+			<Created>2010-05-10T04:28:16.6188841Z</Created>
+		</Rating>
+		<Rating>
+			<Text>dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd dsf gdsf gdsf gg fg g dsgsd g fdgd </Text>
+			<UserId>3288b1f0-fe7d-4ce9-b2d6-d1b73d776d26</UserId>
+			<Score>1</Score>
+			<Created>2010-05-10T05:50:36.6686317Z</Created>
+		</Rating>
+	</Cons>
+	<Type>ProCon</Type>
+</ScoreBored>

@@ -1,0 +1,222 @@
+﻿#container{
+	width:958px;
+	text-align:left;
+	position:relative;
+	_height:100%; /* :hack: min-height for IE6 */
+
+    /* to push down footer */
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+#topper {
+	color: #466E4A;
+	white-space: nowrap;
+	font-size: .92em;
+}
+#topper div
+{
+    display: inline-block;
+}
+#topper #topperL
+{
+	padding: 8px 6px;
+	float:left;
+	width: 380px;
+}
+#topper .login
+{
+    padding: 4px 4px 4px 16px;
+    background: #EEEEEE;
+    width:100%;
+}
+#topper input
+{
+    height:12px;
+}
+#topper #topperR
+{
+	padding: 8px 0 0 60px;
+}
+
+/*header*/
+#header {
+	width:100%;
+	padding: 0 6px;
+	height: 20px;
+}
+#header div
+{
+    display:inline-block;
+}
+#header p,
+#header h1,
+#header h2 {
+	padding:.4em 15px 0 15px;
+	margin:0; 
+	display: inline;
+	font-size: 3em;
+	color: #043E57;
+}
+/*Navigator*/
+#header #nav
+{
+    float:left;
+	width: 450px;
+	font: 0.75em/1 "Trebuchet MS",Verdana,Arial;
+	position: relative;
+	top: -34px;
+}
+#header ul 
+{
+    display: inline-block;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+#header ul li {
+	display:inline;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#header ul li a {
+	margin:0 0 0 1px;
+	padding:3px 10px;
+	text-align:center;
+	background:#FFA21E;
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	line-height:1.3em;
+}
+#header ul li a:hover {
+	background:#466E4A;
+	color:#fff;
+}
+#header ul li a.active,
+#header ul li a.active:hover {
+	color:#fff;
+	background:#000;
+	font-weight:bold;
+}
+#header ul li input {
+left:3px;
+position:relative;
+width:134px;
+height: 12px;
+}
+#header #titleText
+{
+    padding: 2px 0;
+	text-decoration: none;
+	color: #304C33;
+	font-size: 20px;
+	position: relative;
+	right:-10px;
+}
+#logo 
+{
+	position: relative;
+	width: 486px;
+	height:84px;
+	background: url(/images/ScoreBoredLogo.gif) no-repeat 0 0;
+}
+* html #logo
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/logo_36.png', sizingMethod='image');  
+     background-position:center top; background-repeat:no-repeat;
+}
+	
+/*content*/
+/*/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////*/
+#content
+{
+	padding:0 12px;
+	zoom: 1;
+	/*clearfix*/
+	overflow:hidden;
+	width:918px;
+}
+/*clearfix*/
+#content:after { content: "."; clear: both; display: block; height: 0; visibility: hidden; }
+
+
+img.margin-right{
+	float:left; 
+	margin:0 15px 5px 0;
+}
+
+img.margin-left{
+	float:right; 
+	margin:0 0 40px 15px;
+}
+
+
+/*footer*/
+/*http://ryanfait.com/resources/footer-stick-to-bottom-of-page/*/
+/*////////////////////////////////////////////////////////////////////////////////////////*/
+/*To clear the footer*/
+#push {
+    height: 148px;
+}
+
+#footer{
+	width:100%;
+	
+	font-size: .92em;
+	text-align:center;
+}
+
+#footer_sleeve 
+{
+	width:870px;
+	height: 50px;
+	padding: 0 0 0 200px;
+
+	background: url(/images/footer_sleeve.png) no-repeat 50% 0px;
+	margin:0;
+	position: relative;
+	zoom: 1;
+}
+#footer_content
+{
+    background: #61522e;
+	/*border: solid 2px #75662c;*/
+	color: #fff;
+	padding: 12px;
+    margin:108px 24px 0 24px;
+    color: #FFE968;
+    height: 40px;
+    
+}
+#footer_sleeve:after { content: "."; clear: both; display: block; height: 0; visibility: hidden; }
+
+#footer a{
+	color:#FFF;
+}
+
+#footer_address {
+	float: left;
+}
+
+#footer ul {
+	float: right;
+	margin: 27px 0 0;
+}
+
+#footer li{
+	float:left;
+	list-style:none;
+	color:#FFF;
+	background:url(/images/li_footer.gif) no-repeat 100% 3px;
+	padding:0 5px 0 0;
+	margin:0 5px 0 0;
+}
+
+#footer li.last{
+	background:none;
+	margin-right:0;
+}

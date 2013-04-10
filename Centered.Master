@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Centered.master.cs" Inherits="ScoreBoard.Centered" %>
+
+<%@ Register src="search.ascx" tagname="search" tagprefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/CSS/layoutCenter.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/CSS/core.css" media="screen" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body runat="server" id="idBody">
+    <form id="form2" runat="server">
+    <cc1:ToolkitScriptManager ID="ScriptManager1" runat="server">
+    </cc1:ToolkitScriptManager>
+        <div id="container" >
+           <div id="topper">
+                <div id="topperL">
+                    <div class="login">
+                   <asp:LoginView id="LoginView1" runat="server" >
+                    <AnonymousTemplate>
+                        <asp:Login ID="Login1" TitleText="" LoginButtonType="Link"  RememberMeSet="true"
+                            LoginButtonText="Login" TextLayout="TextOnLeft"
+                            Orientation="Horizontal" runat="server" OnLoggedIn="Login1_LoggedIn" 
+                            MembershipProvider="SqlProvider" DisplayRememberMe="false" VisibleWhenLoggedIn="False"
+                            TextBoxStyle-Width="80" OnLoggingIn="Login1_LoggingIn1" onloginerror="Login1_LoginError">
+                        <TextBoxStyle Width="80px"></TextBoxStyle>
+                            <LayoutTemplate>
+                                <table border="0" cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                                    <tr>
+                                        <td>
+                                            <table border="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="UserName" runat="server" Width="80px" />
+                                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server"  CssClass="req" 
+                                                            ControlToValidate="UserName" ErrorMessage="User Name is required." 
+                                                            ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="Password" runat="server" TextMode="Password" Width="80px" />
+                                                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server"  CssClass="req" 
+                                                            ControlToValidate="Password" ErrorMessage="Password is required." 
+                                                            ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                                    </td>
+                                                    <td>
+                                                        <asp:LinkButton ID="LoginLinkButton" runat="server" CommandName="Login"  CssClass="btn" ValidationGroup="Login1">Login</asp:LinkButton>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:Red;" colspan="5">
+                                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </LayoutTemplate>
+                        </asp:Login>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:HyperLink runat="server" ID="lnkUser" NavigateUrl="/users/" CssClass="btnBold"><asp:LoginName ID="LoginName1" runat="server" /></asp:HyperLink>
+                        <asp:LoginStatus ID="loginStatus1" LogoutText="log out" LoginText="" runat="server" CssClass="btn" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                </div>
+                </div>
+                 <div id="topperR"><img src="/images/ScoreBoredLogo.gif" /></div>
+            </div>
+			<div id="header">
+	            <div id="nav">
+	                <ul><li><uc1:search ID="search1" runat="server" /></li>
+			            <li id="nav_home"><a href="/">Home</a></li>
+			            <li id="nav_signup" runat="server"><a href="/signup.aspx">Join</a></li>
+			            <li id="nav_how"><a href="/How_to_make_your_own_Pros-and-Cons_List.aspx">How To</a></li>
+			            <li id="nav_new"><a href="/users/make_scoreboard.aspx">New</a></li>
+		             </ul>
+		             
+	            </div><!-- /nav -->
+	            
+	            <div id="titleText"><asp:contentplaceholder id="cphTitle" runat="server"></asp:contentplaceholder></div>
+            </div><!-- /header -->
+            			
+	        <div id="content">
+                <asp:contentplaceholder id="cphContent" runat="server">
+                </asp:contentplaceholder>
+            </div><!-- /content -->
+            <!-- /clear content for footer -->
+            <%--<div id="push"></div>--%>
+	  </div><!-- /container -->
+	  
+	  <div id="footer">
+	    <div id="footer_content">ScoreBored (707) 206-6609 | <a href="mailto:info@scorebored.net">info@scorebored.net</a> | <a href="">about us</a></div>    
+	      
+	</div>
+    </form>
+</body>
+</html>

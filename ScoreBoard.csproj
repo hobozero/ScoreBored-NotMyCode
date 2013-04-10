@@ -1,0 +1,531 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFBDB1E0-C70F-4373-850B-41080CAD40B4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScoreBoard</RootNamespace>
+    <AssemblyName>ScoreBoard</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="Facebook, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Facebook.Web, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=5.2.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=5.2.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\MySQL\MySQL Connector Net 5.2.6\Web Providers\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xml_scoreboard.aspx" />
+    <Content Include="Dynamic_Scoreboard.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\EmptyStar.png" />
+    <Content Include="Images\FilledStar.png" />
+    <Content Include="Images\SavedStar.png" />
+    <Content Include="users\make_scoreboard.aspx" />
+    <Content Include="ScoreBoard.aspx" />
+    <Content Include="Scores.xml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\FormRewriter.cs" />
+    <Compile Include="AppCode\Rating.cs" />
+    <Compile Include="AppCode\ScoreData.cs">
+      <DependentUpon>ScoreData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\ScoreData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScoreData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ScoreBored.cs" />
+    <Compile Include="AppCode\StringExtensions.cs" />
+    <Compile Include="Centered.Master.cs">
+      <DependentUpon>Centered.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Centered.Master.designer.cs">
+      <DependentUpon>Centered.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic_Scoreboard.aspx.designer.cs">
+      <DependentUpon>Dynamic_Scoreboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="embedded.aspx.cs">
+      <DependentUpon>embedded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="embedded.aspx.designer.cs">
+      <DependentUpon>embedded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\config\Setup.aspx.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\config\Setup.aspx.designer.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\controls\FBMLCSS.ascx.cs">
+      <DependentUpon>FBMLCSS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\controls\FBMLCSS.ascx.designer.cs">
+      <DependentUpon>FBMLCSS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\controls\FBMLJS.ascx.cs">
+      <DependentUpon>FBMLJS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\controls\FBMLJS.ascx.designer.cs">
+      <DependentUpon>FBMLJS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\controls\ProfileBox.ascx.cs">
+      <DependentUpon>ProfileBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\controls\ProfileBox.ascx.designer.cs">
+      <DependentUpon>ProfileBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\controls\PublisherHeader.ascx.cs">
+      <DependentUpon>PublisherHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\controls\PublisherHeader.ascx.designer.cs">
+      <DependentUpon>PublisherHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\FBMLMaster.Master.cs">
+      <DependentUpon>FBMLMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\FBMLMaster.Master.designer.cs">
+      <DependentUpon>FBMLMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\feedHandler.aspx.cs">
+      <DependentUpon>feedHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\feedHandler.aspx.designer.cs">
+      <DependentUpon>feedHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\infoHandler.aspx.cs">
+      <DependentUpon>infoHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\infoHandler.aspx.designer.cs">
+      <DependentUpon>infoHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\jsFeed.aspx.cs">
+      <DependentUpon>jsFeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\jsFeed.aspx.designer.cs">
+      <DependentUpon>jsFeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\multiFeedHandler.aspx.cs">
+      <DependentUpon>multiFeedHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\multiFeedHandler.aspx.designer.cs">
+      <DependentUpon>multiFeedHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\otherPublishHandler.aspx.cs">
+      <DependentUpon>otherPublishHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\otherPublishHandler.aspx.designer.cs">
+      <DependentUpon>otherPublishHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\handlers\publishHandler.aspx.cs">
+      <DependentUpon>publishHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\handlers\publishHandler.aspx.designer.cs">
+      <DependentUpon>publishHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\mysmiles.aspx.cs">
+      <DependentUpon>mysmiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\mysmiles.aspx.designer.cs">
+      <DependentUpon>mysmiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\newsmiley.aspx.cs">
+      <DependentUpon>newsmiley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\newsmiley.aspx.designer.cs">
+      <DependentUpon>newsmiley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\sendsmiley.aspx.cs">
+      <DependentUpon>sendsmiley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\sendsmiley.aspx.designer.cs">
+      <DependentUpon>sendsmiley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FB\smile.aspx.cs">
+      <DependentUpon>smile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FB\smile.aspx.designer.cs">
+      <DependentUpon>smile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="How_to_make_your_own_Pros-and-Cons_List.aspx.cs">
+      <DependentUpon>How_to_make_your_own_Pros-and-Cons_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="How_to_make_your_own_Pros-and-Cons_List.aspx.designer.cs">
+      <DependentUpon>How_to_make_your_own_Pros-and-Cons_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftCol.Master.cs">
+      <DependentUpon>LeftCol.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftCol.Master.designer.cs">
+      <DependentUpon>LeftCol.Master</DependentUpon>
+    </Compile>
+    <Compile Include="results.aspx.cs">
+      <DependentUpon>results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="results.aspx.designer.cs">
+      <DependentUpon>results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.ascx.cs">
+      <DependentUpon>search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.ascx.designer.cs">
+      <DependentUpon>search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\searchService.asmx.cs">
+      <DependentUpon>searchService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\make_scoreboard.aspx.designer.cs">
+      <DependentUpon>make_scoreboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\UserManager.cs" />
+    <Compile Include="users\PasswordManagement.aspx.cs">
+      <DependentUpon>PasswordManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users\PasswordManagement.aspx.designer.cs">
+      <DependentUpon>PasswordManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xml_scoreboard.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>xml_scoreboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xml_scoreboard.aspx.designer.cs">
+      <DependentUpon>xml_scoreboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic_Scoreboard.aspx.cs">
+      <DependentUpon>Dynamic_Scoreboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\make_scoreboard.aspx.cs">
+      <DependentUpon>make_scoreboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreBoard.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ScoreBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreBoard.aspx.designer.cs">
+      <DependentUpon>ScoreBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\MailGen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PsswordRecovery.htm" />
+    <Content Include="users\default.aspx" />
+    <Content Include="users\PasswordManagement.aspx" />
+    <Content Include="users\Web.config" />
+    <Content Include="Login.aspx" />
+    <Content Include="RecoverPassword.aspx" />
+    <Content Include="Signup.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Form.browser" />
+    <Content Include="LeftCol.Master" />
+    <Content Include="CSS\core.css" />
+    <Content Include="CSS\layout.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="bin\Microsoft.Web.Preview.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\MySql.Web.dll" />
+    <Content Include="bin\ScoreBoard.dll" />
+    <Content Include="bin\ScoreBoard.pdb" />
+    <Content Include="Centered.Master" />
+    <Content Include="CSS\board.css" />
+    <Content Include="CSS\layoutCenter.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="embedded.aspx" />
+    <Content Include="App_Data\css\page.css" />
+    <Content Include="bin\Facebook.dll" />
+    <Content Include="bin\Facebook.Web.dll" />
+    <Content Include="FB\config\Setup.aspx" />
+    <Content Include="FB\controls\FBMLCSS.ascx" />
+    <Content Include="FB\controls\FBMLJS.ascx" />
+    <Content Include="FB\controls\ProfileBox.ascx" />
+    <Content Include="FB\controls\PublisherHeader.ascx" />
+    <Content Include="FB\css\page.css" />
+    <Content Include="FB\Default.aspx" />
+    <Content Include="FB\FBToolkit.Samples.Canvas.csproj" />
+    <Content Include="FB\FBToolkit.Samples.Canvas.sln" />
+    <Content Include="FB\handlers\feedHandler.aspx" />
+    <Content Include="FB\handlers\infoHandler.aspx" />
+    <Content Include="FB\handlers\jsFeed.aspx" />
+    <Content Include="FB\handlers\multiFeedHandler.aspx" />
+    <Content Include="FB\handlers\otherPublishHandler.aspx" />
+    <Content Include="FB\handlers\publishHandler.aspx" />
+    <Content Include="FB\Home.aspx" />
+    <Content Include="FB\images\smile0.jpg" />
+    <Content Include="FB\images\smile1.jpg" />
+    <Content Include="FB\images\smile2.jpg" />
+    <Content Include="FB\images\smile3.jpg" />
+    <Content Include="FB\images\smile4.jpg" />
+    <Content Include="FB\images\smile5.jpg" />
+    <Content Include="FB\images\smile6.jpg" />
+    <Content Include="FB\images\smile7.jpg" />
+    <Content Include="FB\images\smile8.jpg" />
+    <Content Include="FB\images\smiley.gif" />
+    <Content Include="FB\images\smiley.jpg" />
+    <Content Include="FB\images\smiley.tiff" />
+    <Content Include="FB\js\base.js" />
+    <Content Include="FB\mysmiles.aspx" />
+    <Content Include="FB\newsmiley.aspx" />
+    <Content Include="FB\README.txt" />
+    <Content Include="FB\sendsmiley.aspx" />
+    <Content Include="FB\smile.aspx" />
+    <Content Include="How_to_make_your_own_Pros-and-Cons_List.aspx" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\comBl.png" />
+    <Content Include="Images\comment.png" />
+    <Content Include="Images\downBl.png" />
+    <Content Include="Images\ScoreBoredLogo.gif" />
+    <Content Include="Images\upBl.png" />
+    <Content Include="Images\vote-down-ya.png" />
+    <Content Include="Images\vote-down.png" />
+    <Content Include="Images\vote-up-ya.png" />
+    <Content Include="Images\vote-up.png" />
+    <Content Include="users\test.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppCode\ScoreData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ScoreData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\AjaxControlToolkit.dll.refresh" />
+    <None Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll.refresh" />
+    <Content Include="CSS\bubbles.css" />
+    <Content Include="CSS\make.css" />
+    <Content Include="CSS\tip-pimped.gif" />
+    <Content Include="CSS\tip-rounded.gif" />
+    <Content Include="CSS\tip.gif" />
+    <Content Include="FB\FBMLMaster.Master" />
+    <Content Include="FB\Web.config" />
+    <Content Include="Images\stUp.png" />
+    <Content Include="results.aspx" />
+    <Content Include="scripts\jquery-1.4.2.debug.js" />
+    <Content Include="scripts\jquery-1.4.2.js" />
+    <Content Include="scripts\make.js" />
+    <Content Include="scripts\rounded_corners.inc.js" />
+    <Content Include="search.ascx" />
+    <Content Include="Services\searchService.asmx" />
+    <Content Include="test.aspx" />
+    <Content Include="User.aspx" />
+    <Content Include="viral\digg.js" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppCode\ScoreData.dbml.layout">
+      <DependentUpon>ScoreData.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="boards\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1882</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,327 @@
+﻿/* Scoreboard */
+#board
+{
+    background: #466E4A;
+    width: 800px; 
+    height: 100%;
+}
+#board td,th
+{
+    border-spacing: 0;
+    padding: 0;
+    text-align:center; 
+    overflow:hidden;
+}
+#board th
+{
+    border-bottom: solid 4px #FFF;
+    vertical-align:top;
+}
+#board table.empty
+{
+    width:100%;
+    border-bottom: solid 4px #FFF;
+}
+
+
+/*Individual competitor table*/
+#board .comTbl
+{
+    padding: 6px 12px;
+    border-spacing: 0;
+}
+/* column */
+#board .col
+{
+    vertical-align: top;
+    height: 300px;
+    border: solid 4px #FFF;
+}
+#board td.sc
+{
+    vertical-align:top;
+    width: 64px;
+}
+
+/*Orange Red Score*/
+#board div.score
+{
+    font: 240%/1 Impact;
+    margin:6px;
+    padding: 4px 6px;
+    text-align: right;
+    color: #FFA21E;
+    background: #232623;
+}
+
+#board div.brd
+{
+    border: solid 2px;
+}
+#board .le
+{
+    position:relative; /*necessary for vertical centering in IE */
+    float:left;
+}
+#board .entry
+{
+    display: table-cell; /*to support vertical centering non-IE*/
+    vertical-align: middle;
+    padding: 2px 2px 2px 6px;
+    font: 1.45em/.98 Lucida Console,Monaco;
+	color:#FFF;
+    width:298px;
+    height: 3.2em; /*must be set or overflow won't be hidden */
+}
+/*IE only have to vertically center*/
+#board .ieShell
+{
+    #left:6px;
+    #position: absolute; 
+    #top: 50%;
+    #left: 0%;
+}
+#board .ieCenter
+{
+    width:100%;
+    #position: relative; 
+    #top: -50%; 
+    #left: 0%;
+}
+#board 
+#board div.comment
+{
+    color: #fff;
+    font: .75em/1.1;
+    border-top: solid 1px #fff;
+    display:block;
+}
+.status
+{
+    background: #232623;
+    border: dotted 3px #FFB017;
+   text-align:center;
+   margin: 5px;
+   padding: 6px 12px;
+   font-size: 2.5em;
+   font-weight: bold;
+   letter-spacing: -4px;
+   color: #eee;
+   font-family:Lucida Console, Monaco5, monospace;
+}
+#board td.highlight
+{
+    background: #A3B26E;
+}
+
+/*Vote Buttons*/
+#board .upDown
+{
+    float:right;
+    padding: 6px 0 0;
+    width: 24px;
+    display: table-cell; /*to support vertical centering*/
+}
+a.voteBt
+{
+    font-size: 160%;
+    padding: 4px 6px;
+    margin-left:12px;
+}
+#board a.del
+{
+    background:none repeat scroll 0 0 #B27C6B;
+    color:#FFFFFF;
+    text-decoration:none;
+    font-size: .7em;
+    padding: 0 3px;
+}
+.upDown .up
+{
+    width:24px;
+    height:16px;
+    background: url(/images/vote-up.png) no-repeat 0 0;
+    cursor: pointer;
+}
+.upDown .down
+{
+    width:24px;
+    height:16px;
+    background: url(/images/vote-down.png) no-repeat 0 0;
+    cursor: pointer;
+}
+.upDown .up-ya
+{
+    width:24px;
+    height:16px;
+    background: url(/images/vote-up-ya.png) no-repeat 0 0;
+}
+.upDown .down-ya
+{
+    width:24px;
+    height:16px;
+    background: url(/images/vote-down-ya.png) no-repeat 0 0;
+}
+.upDown .com
+{
+    width:24px;
+    height:16px;
+    background: url(/images/comment.png) no-repeat 0 0;
+    cursor: pointer;
+}
+a.comCt
+{
+    text-decoration:none;
+    font: normal 0.72em/1 "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color:#bbb;
+}
+.embed
+{
+    background: #D8E9E5;
+    padding: 10px;
+    margin:10px;
+    border: solid 1px #78B2D9;
+}
+pre.code 
+{
+  font: 1.1em/1 'Courier New', Courier, Fixed;
+  width: 100%;
+  /*overflow:-moz-scrollbars-horizontal;
+  overflow-x:scroll;*/
+   white-space:pre;
+  border: 1px dotted #281;
+  border-left: none;
+  background-color: #fff;
+  padding-bottom: 16px;
+  font-size: 1em;
+  white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+*width:100%;
+  }
+  
+#vtVote
+{
+    width: 400px;
+}
+#vtVote p
+{
+    width:100%;
+    vertical-align: middle;
+    padding: 8px;
+}  
+/**********************
+    comments
+**********************/
+.comBox
+{
+    width:240px;
+    height: 110px;
+    margin: 8px 0;
+}
+.comment
+{
+    margin-top:10px;
+    min-height:128px; /* clear bottom comment pop */
+}
+.comment ul, .comment li {
+    list-style:none outside none;
+    margin:0;
+    padding:0;
+    min-height:30px;
+    #height:30px; /* for IE min-height */
+    overflow:visible;
+}
+.comment li {
+    border-top: 1px solid #E0E0E0;
+    padding:8px 0 10px 150px;
+    position:relative;
+    clear:both;
+    
+}
+.c-score
+{
+    padding:6px 0 2px 16px;
+    font-weight:bold;
+    font-size: 120%;
+    border-bottom: solid 2px #5B9060;
+    color:#466E4A;
+}
+.c-score a
+{
+    padding: 0 4px;
+    color:#466E4A;
+    text-decoration:none;
+}
+.c-score a:hover
+{
+    background: #DCEBAD;
+}
+.c-ctrl 
+{
+    position:relative;
+    right:0;
+    font-size:85%;
+    min-width:90px;
+    padding:0 10px 4px 15px;
+    text-align:right;
+    cursor: pointer;
+    float:right;
+}
+.c-ctrl a
+{
+    text-decoration: none;
+    padding: 0 4px;
+}
+div.c-box {
+    bottom:2px;
+    font-size:85%;
+    margin-bottom:-12px;
+    padding:0 10px;
+    position:relative;
+    right:0;
+    text-align:right;
+}
+.c-head {
+    font-size:65%;
+    left:30px;
+    min-height:30px;
+    overflow:hidden;
+    padding-left:6px;
+    position:absolute;
+    top:10px;
+    width:105px;
+}
+.c-body 
+{
+    font-size:85%;
+    padding:8px 40px 6px 0;
+}
+.c-i
+{
+    position:absolute;
+    left:4px;
+    top: 12px;
+    width:24px;
+    height:16px;
+}
+.c-iDn
+{
+    width:24px;
+    height:16px;
+    background: url(/images/downBl.png) no-repeat 0 0;
+}
+.c-iUp
+{
+    width:24px;
+    height:16px;
+    background: url(/images/upBl.png) no-repeat 0 0;
+}
+.c-iCom
+{
+    width:24px;
+    height:16px;
+    background: url(/images/comBl.png) no-repeat 0 0;
+}

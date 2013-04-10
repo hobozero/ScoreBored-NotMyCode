@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="DB_8261_scorebored" Class="ScoreDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=s01.winhost.com;Initial Catalog=DB_8261_scorebored;Persist Security Info=True;User ID=DB_8261_scorebored_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_8261_scoreboredConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Z_SB_BOARD" Member="Z_SB_BOARDs">
+    <Type Name="Z_SB_BOARD" Id="ID1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="DT_CREATED" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_NAME" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CON_NAME" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_PHRASE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spSearch" Method="spSearch">
+    <Parameter Name="searchString" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="top" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.searchBored" Method="searchBored" IsComposable="true">
+    <Parameter Name="string" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="top" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+</Database>

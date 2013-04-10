@@ -1,0 +1,275 @@
+﻿body {
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background:#fff;
+	min-width:600px;    	/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	font: normal 0.9em/1.12 "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color:#666;
+	height: 100%;
+}
+a {
+	color:#369;
+	text-decoration: none;
+}
+a:hover {
+	color:#fff;
+	background:#369;
+	text-decoration:none;
+}
+h1, h2, h3 {
+	margin:.8em 0 .2em 0;
+	padding:0;
+	color: #444;
+}
+p {
+	margin:.3em 0 .5em 0;
+	padding-top:8px;
+}
+
+ul li
+{
+    padding: 6px;
+}
+
+#tblList
+{
+    padding: 2px 2px 2px 6px;
+	color:#FFF;
+    float: left;
+    background: #466E4A;
+    width:100%;
+}
+#tblList td
+{
+    vertical-align: top;
+    margin-bottom: 4px;
+    
+}
+#tblList .txt
+{
+    padding:2px 6px;
+    border:4px solid #FFF;
+    border-collapse:collapse;
+    width: 100%;
+}
+#tblList .to
+{
+    padding:10px 0;
+}
+#tblList .title
+{
+    text-align: center;
+    font: 160% Lucida Console, Monaco;
+}
+#tblist .vs
+{
+    color: #FFF8A8;
+}
+#tblList a:link { color:#FFF; text-decoration:none; }
+#tblList a:visited { color:#FFF; text-decoration:none; }
+#tblList a:hover { color:#FFF; background-color: #466E4A; text-decoration:underline; }
+#tblList a:active { color:#FFF; text-decoration:none; }
+
+.score
+{
+    font-family: Impact;
+    color: #FFA21E;
+    background: #232623;
+    border: solid 1px #ddd;
+    padding: 0 2px;
+}
+#tblList .score
+{
+    font-size: 240%;
+    margin:6px 4px;
+    padding: 4px 6px 4px 0;
+    text-align: right;
+    width: 50px;
+}
+.mini
+{
+    font-size: .7em;
+    font-family: Arial;
+    border: solid 4px #466E4A;
+}
+
+
+/*Globals*/
+.x-close 
+{
+    float:right; 
+    background: url('../images/close.gif') no-repeat; 
+    cursor:pointer;
+    width:17px; height: 17px;
+    border: none;
+}
+.modalBackground
+{
+    background-color: Gray;
+    filter:alpha(opacity=70);
+    opacity:0.7;
+}
+div.popoutBox
+{
+    overflow:hidden;
+    overflow-x: hidden;
+    padding:12px;
+    background: #FFFFFF;
+    border: solid 1px #6182A3;
+    z-index: 9999;
+}
+/* Auto-Suggest */
+ul.sug
+{
+    height: auto !important;
+    width: auto !important;
+    padding:4px !important;
+    background: #FFFFFF !important;
+    border: solid 1px #6182A3;
+}
+ul.sug .itm
+{
+    padding: 4px 6px !important;
+    width: auto !important;
+    cursor:pointer;
+}
+ul.sug .sel
+{
+    padding: 0a 6px !important;
+    background: #FFF1AD !important;
+}
+/*required*/
+.req
+{
+    color: #FF0000;
+    font-weight: bold;
+}
+/* Rating */
+.ratingStar {
+    font-size: 0pt;
+    width: 13px;
+    height: 12px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: block;
+    background-repeat: no-repeat;
+}
+.filledRatingStar {
+    background-image: url(../Images/FilledStar.png);
+}
+
+.emptyRatingStar {
+    background-image: url(../Images/EmptyStar.png);
+}
+
+.savedRatingStar {
+    background-image: url(../Images/SavedStar.png);
+}
+a.btn 
+{
+    background:none repeat scroll 0 0 #FFA21E;
+	display:inline-block;
+	margin:2px 2px 2px 0;
+	padding:3px 10px;
+	text-align:center;
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	font: 0.8em/1.3 "Trebuchet MS",Verdana,Arial;
+}
+a.btn:hover {
+	background:#466E4A;
+	color:#fff;
+}
+a.btnBold 
+{
+    display:inline-block;
+	margin:2px 2px 2px 0;
+	padding:3px 6px;
+	text-align:center;
+	background:#FFA21E;
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	font: 0.8em/1.3 "Trebuchet MS",Verdana,Arial;
+    top: 0px;
+}
+a.btnBoldDark
+{
+    background:#CC8C48;
+}
+a.btnBold:hover {
+	background:#466E4A;
+	color:#fff;
+}
+.note
+{
+    font: 0.4em/1 "Trebuchet MS",Verdana,Arial;
+    color: #435C50;
+}
+
+/* utility */
+.slate
+{
+    background: #466E4A;  
+    color: #fff;
+    font-family: Lucida Console, Monaco;
+}
+div.slate
+{
+    text-align: center;
+    font-size: 120%;
+    padding: 2px;
+    border: solid 2px #fff;
+	color:#FFF;
+}
+h2.slate
+{
+    font-size: 162%/1;
+    border: 555;
+}
+
+/* text styles */
+.iBold
+{
+    font-weight: bold;
+    color: #353535;
+}
+.header16 {
+	font-family: verdana,arial,helvetica;
+	text-decoration: none;
+	font-size:16px;
+	font-weight:bold;
+	
+}
+.text14 {
+	text-decoration: none;
+	font-size:14px;
+	font-weight:normal;
+}
+.text16 {
+	text-decoration: none;
+	font-size:16px;
+	font-weight:normal;
+}
+.h1 
+{
+    padding: 4px 0;
+	font-family: verdana,arial,helvetica;
+	text-decoration: none;
+	font-size:32px;
+	font-weight:bold;
+}
+.h2 
+{
+    padding: 4px 0;
+	font-family: verdana,arial,helvetica;
+	text-decoration: none;
+	font-size:24px;
+	font-weight:bold;
+}
+

@@ -1,0 +1,21 @@
+Disallow Links in comments
+	(remove anything .com/net, etc do URL regex) User anti-XSS
+
+add IIS redirect for SEarch
+
+Should say who created board
+
+User page, link board creator, votes, comments to page that lists all user's other comments and boards.
+
+
+
+need to rebind the scoreboard when user logs in... Should preserve value of text boxes.
+
+
+New Features:
+*  Add an "update me when Scorebored changes" option when you create a board.
+*  Better to store URLs with _ where spaces exist!
+*  Might have to make it invite only (send message to owner
+*  board owner should have delete privileges for scores/comments
+*	vertical centering of scores is done through nested divs for IE.  this is bad SEO.  
+	there are solutions to vertically center in JavaSCript as well as dynamically change text height to fill cell.
